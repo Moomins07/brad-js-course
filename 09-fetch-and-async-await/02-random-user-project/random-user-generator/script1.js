@@ -1,23 +1,12 @@
+const newUser = document.getElementById('generate');
+
 function fetchUser() {
   showSpinner();
   fetch('https://randomuser.me/api')
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error('Request Failed');
-      }
-
-      return res.json();
-    })
+    .then((res) => res.json())
     .then((data) => {
       hideSpinner();
       displayUser(data.results[0]);
-    })
-    .catch((error) => {
-      hideSpinner();
-      document.querySelector('#user').innerHTML = `
-      <p class="text-xl text-center text-red-500 mb-5">
-      ${error}
-      </p>`;
     });
 }
 
@@ -30,8 +19,7 @@ function displayUser(user) {
     document.body.style.backgroundColor = 'steelblue';
   }
 
-  userDisplay.innerHTML = `
-  <div class="flex justify-between">
+  userDisplay.innerHTML = `<div class="flex justify-around">
   <div class="flex">
     <img
       class="w-48 h-48 rounded-full mr-8"
@@ -48,13 +36,12 @@ function displayUser(user) {
         <span class="font-bold">Phone: </span> ${user.phone}
       </p>
       <p class="text-xl">
-        <span class="font-bold">Location: </span> ${user.location.city} ${user.location.country}
+        <span class="font-bold">Location: </span> ${user.location.city}, ${user.location.country}
       </p>
       <p class="text-xl"><span class="font-bold">Age: </span> ${user.dob.age}</p>
     </div>
   </div>
-</div>
-  `;
+</div>`;
 }
 
 function showSpinner() {
@@ -65,6 +52,6 @@ function hideSpinner() {
   document.querySelector('.spinner').style.display = 'none';
 }
 
-document.querySelector('#generate').addEventListener('click', fetchUser);
+newUser.addEventListener('click', fetchUser);
 
 fetchUser();

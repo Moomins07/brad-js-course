@@ -1,0 +1,11 @@
+CRUD
+
+Create, Read, Update, Delete
+
+GET: Retrieve a specific resource (by id) or a collection of resources
+POST: Create a new resource
+PUT: Update a specific resource (by id)
+DELETE: Remove a specific resource by id
+
+Crud is at the core of most applications. Crud and authentication.
+
