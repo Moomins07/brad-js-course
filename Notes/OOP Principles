@@ -1,0 +1,14 @@
+4 Principesl of OOP
+
+ABSTRACTION
+Hiding all but the relevant parts of an object for simplicity and efficiency. An example of this is addEventListener(), we don't know how the method works under the hood, but we know about the methods and parts that are relevant to what we're doing.
+
+ENCAPSULATION
+The process of wrapping up data and methods into a unit such as a class or a function. Encapsulation usually includes a form of 'data hiding'.
+E.g. Scope is a form of encapsulation. When a variable is created inside of a function, that variable is encapsulated in the function; we cannot access that variable from the global scope.
+
+INHERITANCE
+The process of inheriting properties and methods from a parent class or constructor. This is to reduce redundancy. E.g. A User class with various methods can be access by a Admin class if the Admin class is 'extended' with the User class.
+
+POLYMORPHISM
+The process of inheriting the properties and methods from a parent class or constructor. Poly(many) morph(forms). Polymorphism is re-using code but in different ways. E.g. A User class may have a function sayHello() that prints a hello to the user. We can then extend this class to our Admin class and use that same method to print a hello to an Admin.
